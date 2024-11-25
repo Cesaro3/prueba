@@ -320,34 +320,34 @@
 
        async function cargarArchivoAutomatico() {
             // Ruta del archivo .txt (en el mismo directorio del proyecto)
-            const archivoRuta = './mdr.txt';
+            const archivoRuta2 = './mdr.txt';
 
             // Usamos fetch para obtener el contenido del archivo
             try {
-                const respuesta = await fetch(archivoRuta);
+                const respuesta2 = await fetch(archivoRuta2);
 
                 // Comprobar que el archivo se cargó correctamente
-                if (!respuesta.ok) {
+                if (!respuesta2.ok) {
                     throw new Error('No se pudo cargar el archivo.');
                 }
 
                 // Leer el contenido del archivo como texto
-                const contenido = await respuesta.text();
+                const contenido2 = await respuesta2.text();
 
                 // Dividir el contenido por líneas
-                const lineas = contenido.split('\n');
+                const lineas2 = contenido2.split('\n');
 
                 // Obtener el select
-                const select = document.getElementById('atendio_desp');
+                const select2 = document.getElementById('atendio_desp');
 
                 // Añadir las líneas como opciones
-                lineas.forEach(linea => {
-                    const opcion = linea.trim();
-                    if (opcion) {
+                lineas2.forEach(linea => {
+                    const opcion2 = linea.trim();
+                    if (opcion2) {
                         const nuevaOpcion = document.createElement('option');
-                        nuevaOpcion.value = opcion;
-                        nuevaOpcion.textContent = opcion;
-                        select.appendChild(nuevaOpcion);
+                        nuevaOpcion2.value = opcion2;
+                        nuevaOpcion2.textContent = opcion2;
+                        select.appendChild(nuevaOpcion2);
                     }
                 });
             } catch (error) {
