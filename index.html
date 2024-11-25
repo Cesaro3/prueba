@@ -320,34 +320,34 @@
 
        async function cargarArchivoAutomatico1() {
             // Ruta del archivo .txt (en el mismo directorio del proyecto)
-            const archivoRuta2 = './mdr.txt';
+            const archivoRuta1 = './mdr.txt';
 
             // Usamos fetch para obtener el contenido del archivo
             try {
-                const respuesta2 = await fetch(archivoRuta2);
+                const respuesta = await fetch(archivoRuta1);
 
                 // Comprobar que el archivo se cargó correctamente
-                if (!respuesta2.ok) {
+                if (!respuesta.ok) {
                     throw new Error('No se pudo cargar el archivo.');
                 }
 
                 // Leer el contenido del archivo como texto
-                const contenido2 = await respuesta2.text();
+                const contenido = await respuesta.text();
 
                 // Dividir el contenido por líneas
-                const lineas2 = contenido2.split('\n');
+                const lineas = contenido.split('\n');
 
                 // Obtener el select
-                const select2 = document.getElementById('atendio_desp');
+                const select = document.getElementById('atendio_desp');
 
                 // Añadir las líneas como opciones
-                lineas2.forEach(linea => {
-                    const opcion2 = linea.trim();
-                    if (opcion2) {
-                        const nuevaOpcion2 = document.createElement('option');
-                        nuevaOpcion2.value = opcion2;
-                        nuevaOpcion2.textContent = opcion2;
-                        select.appendChild(nuevaOpcion2);
+                lineas.forEach(linea => {
+                    const opcion = linea.trim();
+                    if (opcion) {
+                        const nuevaOpcion = document.createElement('option');
+                        nuevaOpcion.value = opcion;
+                        nuevaOpcion.textContent = opcion;
+                        select.appendChild(nuevaOpcion);
                     }
                 });
             } catch (error) {
